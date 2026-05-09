@@ -1,47 +1,32 @@
 ---
-import Navbar from "../components/Navbar.astro"
+import MainLayouts from "../layouts/MainLayouts.astro";
 
 // Only Server
-const name = 'Home Page'
-const title = 'Home Page'
+const name = 'Home Page';
+const title = 'Home Page';
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body>
-       <Navbar />
+<MainLayouts title={title}>
 
-        <h1>{name}</h1>
-        <p>Momento actual: { new Date().toLocaleTimeString() }</p>
-        
-        <p id="current-time">Momento actual real: </p>
+    <h1>{name}</h1>
+    <p>Momento actual: { new Date().toLocaleTimeString() }</p>
+    
+    <p id="current-time">Momento actual real: </p>
 
-        <footer>
-            Año: 2023
-        </footer>
 
-        <script>
-            // Client Only
-            const currentYear: number = new Date().getFullYear();
-            const footer = document.querySelector('footer') as HTMLElement;
-            const currentTimeParagraph = document.querySelector('#current-time') as HTMLParagraphElement;
+    <script>
+        // Client Only
+        const currentYear: number = new Date().getFullYear();
+        const footer = document.querySelector('footer') as HTMLElement;
+       
+        const currentTimeParagraph = document.querySelector('#current-time') as HTMLParagraphElement;
 
-            // Actualizamos el año en el footer
-            if (footer) {
-                footer.innerText = `Año: ${currentYear}`;
-            }
+        // Actualizamos el año en el footer
+       
+        if (currentTimeParagraph) {
+            currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
+        }
+    </script>
 
-            // Actualizamos el tiempo real al cargar la página
-            if (currentTimeParagraph) {
-                currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
-            }
-        </script>
-    </body>
-</html>
+</MainLayouts>
+
