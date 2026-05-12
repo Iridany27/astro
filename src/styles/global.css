@@ -1,0 +1,22 @@
+/* src/styles/home.css */
+
+h1 {
+    color: #d63384;
+    background-color: #ffe4f0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+p {
+    color: #b5567a;
+    background-color: #fff0f6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border-left: 4px solid #ffb3d1;
+}
+
+#current-time {
+    background-color: #ffd6e8;
+    border-left-color: #ff85b3;
+}

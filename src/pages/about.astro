@@ -1,13 +1,13 @@
 ---
-import MainLayout from '../layouts/MainLayouts.astro';
+import CustomTitle from '../components/CustomTime.astro'; 
+import MainLayout from '../layouts/MainLayouts.astro'; 
 ---
 
 <MainLayout title="About Page">
   <h1>About</h1>
-
-  <style>
-    h1 {
-      color: red;
-    }
-  </style>
+  <CustomTitle title="This is a custom title" />
 </MainLayout>
+
+<style is:global>
+  h1 { color: red; }
+</style>
